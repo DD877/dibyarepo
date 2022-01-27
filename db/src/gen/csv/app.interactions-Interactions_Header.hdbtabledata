@@ -1,0 +1,31 @@
+{
+  "format_version": 1,
+  "imports": [
+    {
+      "target_table": "APP_INTERACTIONS_INTERACTIONS_HEADER",
+      "source_data": {
+        "data_type": "CSV",
+        "file_name": "app.interactions-Interactions_Header.csv",
+        "has_header": true,
+        "type_config": {
+          "delimiter": ","
+        }
+      },
+      "import_settings": {
+        "import_columns": [
+          "ID",
+          "PARTNER",
+          "LOG_DATE",
+          "BPCOUNTRY_CODE"
+        ],
+        "include_filter": []
+      },
+      "column_mappings": {
+        "ID": "ID",
+        "PARTNER": "PARTNER",
+        "LOG_DATE": "LOG_DATE",
+        "BPCOUNTRY_CODE": "BPCOUNTRY_CODE"
+      }
+    }
+  ]
+}
