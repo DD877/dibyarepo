@@ -10,7 +10,8 @@
 
 
 
-### General project setup
+
+### General project 
 general:
   inferBuildTool: true
 
@@ -32,6 +33,15 @@ stages:
 #      - alias: 'mySystemAlias'
 #        credentialId: 'mySystemCredentialsId'
 
+Acceptance:
+    cloudFoundryDeploy: false                                               # true, if you want to deploy to Cloud Foundry test space (default: false)
+    cfApiEndpoint: "https://api.cf.us10.hana.ondemand.com" # for example, https://api.cf.eu10.hana.ondemand.com
+    cfOrg: "b1ff4e01trial"
+    cfSpace: "dev"                           # enter the Cloud Foundry space, in which you want to execute uiVeri5 tests
+    cfAppName: "capdemoforcicd"    
+    cfCredentialsId: "cfdeploy"
+    uiVeri5ExecuteTests: false 
+
 #  Release:
 #    cfTargets:
 #      - org: 'myOrg'
@@ -40,3 +50,20 @@ stages:
 #        appName: 'myAppName'
 #        manifest: 'manifest.yml'
 #        credentialsId: 'myDeploymentCredentialsId'
+
+Release:
+    cloudFoundryDeploy: true                                                # true, if you want to deploy to Cloud Foundry (default: false)
+    cfApiEndpoint: "https://api.cf.us10.hana.ondemand.com"   # for example, https://api.cf.eu10.hana.ondemand.com
+    cfOrg: "b1ff4e01trial"
+    cfSpace: "dev"                           # enter the Cloud Foundry space, to which you want to deploy your application
+    cfAppName: "capdemoforcicd"   
+    cfCredentialsId: "cfdeploy"
+    tmsUpload: true      
+
+
+tmsUpload:  
+nodeName: "QAS"
+credentialsId: "std-tms"
+cloudFoundryDeploy:             
+    mtaDeployParameters:  "-f --version-rule ALL"
+ 
