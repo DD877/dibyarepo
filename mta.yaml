@@ -1,7 +1,6 @@
 ## Generated mta.yaml based on template version 0.4.0
 ## appName = capdemoforcicd
-## language=nodejs; multitenant=false
-## approuter=
+
 _schema-version: '3.1'
 ID: capdemoforcicd
 version: 1.0.0
